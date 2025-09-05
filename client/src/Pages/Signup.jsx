@@ -20,7 +20,7 @@ const Signup = () => {
     try {
       const { data } = await signup({ name, email, password }); // ✅ Call API
        localStorage.setItem("token", data.token); // ✅ Save JWT token
-      navigate("/Login");
+      navigate("/login");
       alert(data.message); // ✅ Redirect to Profile page
     } catch (error) {
       setError(error.response?.data?.message || "Signup failed");
